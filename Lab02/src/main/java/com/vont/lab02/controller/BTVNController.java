@@ -33,11 +33,11 @@ public class BTVNController {
         if(number < 2) {
             model.addAttribute("ngTo", 2);
         }else {
-            int ktra = number + 1;
-            while (!kTrNgTo(ktra)) {
-                ktra ++;
+            int soNgTo = number + 1;
+            while (!kTrNgTo(soNgTo)) {
+                soNgTo ++;
             }
-            model.addAttribute("ngTo", ktra);
+            model.addAttribute("ngTo", soNgTo);
         }
         model.addAttribute("number", number);
         return "views/bai03";
