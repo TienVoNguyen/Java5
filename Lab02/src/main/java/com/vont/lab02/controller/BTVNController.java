@@ -9,14 +9,15 @@ import org.springframework.web.bind.annotation.RequestParam;
 public class BTVNController {
     @GetMapping("bai01")
     public String BaiTap01(@RequestParam("str1") String str1, @RequestParam("str2") String str2, Model model) {
-        String trave = "";
+        StringBuilder traVe = new StringBuilder();
         if(str1.length() > str2.length()) {
-            model.addAttribute("message", str1);
+            traVe.append(str1);
         }else if(str1.length() < str2.length()){
-            model.addAttribute("message", str2);
+            traVe.append(str2);
         }else {
-            model.addAttribute("message", "Chuoi 1 va chuooi 2 bang nhau");
+            traVe.append("Chuoi 1 va chuooi 2 bang nhau");
         }
+        model.addAttribute("message", traVe.toString());
         return "views/bai01";
     }
 
@@ -30,19 +31,19 @@ public class BTVNController {
     @GetMapping("bai03")
     public String BaiTap03(@RequestParam("number") int number, Model model) {
         if(number < 2) {
-            model.addAttribute("ngto", 2);
+            model.addAttribute("ngTo", 2);
         }else {
             int ktra = number + 1;
-            while (!ktrngto(ktra)) {
+            while (!kTrNgTo(ktra)) {
                 ktra ++;
             }
-            model.addAttribute("ngto", ktra);
+            model.addAttribute("ngTo", ktra);
         }
         model.addAttribute("number", number);
         return "views/bai03";
     }
 
-    private Boolean ktrngto(int number) {
+    private Boolean kTrNgTo(int number) {
         for (int i = 2; i <= Math.sqrt(number); i++) {
             if (number % i == 0) return false;
         }
