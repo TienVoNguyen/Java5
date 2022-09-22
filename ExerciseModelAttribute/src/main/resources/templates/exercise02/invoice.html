@@ -16,8 +16,8 @@
             <li th:text="'Name: '+*{name}"></li>
             <li th:text="'Price: '+*{price}"></li>
             <li th:text="'Quantity: '+*{quantity}"></li>
-            <li th:text="'Purchase date: '+${date}"></li>
-            <li th:text="'Total: '+${total}"></li>
+            <li th:text="'Purchase date: '+*{#dates.format(date, 'hh:mm:ss a, dd/MM/yyyy')}"></li>
+            <li th:text="'Total: '+*{total}"></li>
         </ul>
     </div>
 </div>

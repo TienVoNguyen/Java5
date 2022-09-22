@@ -27,9 +27,9 @@ public class Exercise02Controller {
         if(result.hasErrors()) {
             return "exercise02/order";
         }
-        double total = product.getPrice() * product.getQuantity();
-        model.addAttribute("total", total);
-        model.addAttribute("date", LocalDate.now());
+        product.setDate();
+        product.setTotal();
+        model.addAttribute("product", product);
         return "exercise02/invoice";
     }
 }
