@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<div class="container">
+    <header>
+        <div class="alert alert-primary text-center" role="alert">
+            <h1>Invoice</h1>
+        </div>
+    </header>
+    <div>
+        <ul th:object="${product}">
+            <li th:text="'Name: '+*{name}"></li>
+            <li th:text="'Price: '+*{price}"></li>
+            <li th:text="'Quantity: '+*{quantity}"></li>
+            <li th:text="'Purchase date: '+${date}"></li>
+            <li th:text="'Total: '+${total}"></li>
+        </ul>
+    </div>
+</div>
+</body>
+</html>
