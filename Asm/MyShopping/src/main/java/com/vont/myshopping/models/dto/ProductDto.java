@@ -29,6 +29,8 @@ public class ProductDto implements Serializable {
     private Integer quantity;
     @NotNull
     private BigDecimal price;
+
     private Boolean available;
+
     private Long categoryId;
 }

@@ -63,7 +63,7 @@
                         </th:block>
                         <th:block th:if="${#request.remoteUser}">
                             <li th:if="${#request.isUserInRole('ADMIN') or #request.isUserInRole('STAFF')}">
-                                <a href="#"><i class="fa fa-dashboard"></i>Administration</a>
+                                <a th:href="@{/account/autologin}"><i class="fa fa-dashboard"></i>Administration</a>
                             </li>
                             <li><a th:href="@{/order}"><i class="fa fa-star"></i> Your Orders</a></li>
                         </th:block>

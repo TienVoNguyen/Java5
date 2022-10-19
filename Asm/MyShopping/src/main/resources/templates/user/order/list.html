@@ -26,9 +26,11 @@
                     <tr class="cart_menu">
                         <td>No.</td>
                         <td>Order No.</td>
+                        <td>Receiver</td>
                         <td>Order Date</td>
                         <td class="price">Phone Number</td>
                         <td class="image">Address</td>
+                        <td class="image">Status</td>
                         <td class="total">Detail</td>
                     </tr>
                     </thead>
@@ -42,6 +44,9 @@
                             [[${item.id}]]
                         </td>
                         <td class="cart_price">
+                            <p>[[${item.fullName}]]</p>
+                        </td>
+                        <td class="cart_price">
                             <p>[[${item.createDate}]]</p>
                         </td>
                         <td class="cart_price">
@@ -49,6 +54,9 @@
                         </td>
                         <td class="cart_quantity">
                             <p>[[${item.address}]]</p>
+                        </td>
+                        <td class="cart_quantity">
+                            <p th:text="${item.status?'confirmed':'Wait for confirmation'}"></p>
                         </td>
                         <td>
                             <a th:href="'/order/detail/'+${item.id}" class="cart_quantity_delete text-center"><i class="fa fa-search"></i></a>

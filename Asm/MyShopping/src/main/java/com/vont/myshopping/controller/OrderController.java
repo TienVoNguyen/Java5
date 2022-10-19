@@ -1,6 +1,9 @@
 package com.vont.myshopping.controller;
 
+import com.vont.myshopping.security.UserDetailsImpl;
 import com.vont.myshopping.service.IOrderService;
+import org.springframework.security.core.Authentication;
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -27,6 +30,9 @@ public class OrderController {
 
     @GetMapping("checkout")
     public String checkout(Model model) {
+        Authentication auth = SecurityContextHolder.getContext().getAuthentication();
+        UserDetailsImpl userDetails = (UserDetailsImpl) auth.getPrincipal();
+        model.addAttribute("name", userDetails.getFullName());
         return "user/order/checkout";
     }
 

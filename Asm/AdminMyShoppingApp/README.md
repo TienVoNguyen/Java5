@@ -1,4 +1,4 @@
-# default-app
+# Admin My Shopping App
 
 ## Project setup
 ```

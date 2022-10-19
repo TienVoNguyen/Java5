@@ -27,7 +27,7 @@ public class ProductController {
             model.addAttribute("products", productService.findByCategory(cid.get()));
         }else {
             Pageable pageable = PageRequest.of(0, 9);
-            model.addAttribute("products", productService.findAll(pageable));
+            model.addAttribute("products", productService.findAllDto(pageable));
         }
         return "user/product/list";
 

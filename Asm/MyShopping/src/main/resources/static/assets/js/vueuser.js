@@ -66,10 +66,11 @@ var app = new Vue({
                         quantity: item.quantity
                     }
                 });
-
+            let fullName = document.querySelector('#fullName').value
             let order = {
                 address: this.address,
                 phoneNumber: this.phoneNumber,
+                fullName: fullName,
                 orderDetail: orderDetail
             }
             const url = "http://localhost:1997/api/order";

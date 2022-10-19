@@ -24,10 +24,17 @@ public class Order extends BaseEntity{
     @Column(name = "address")
     private String address;
 
+    @Column
+    private String fullName;
+
+    @Column
+    private Boolean status;
+
     @Size(max = 12)
     @Column(name = "phoneNumber", length = 12)
     private String phoneNumber;
 
     @OneToMany(mappedBy = "order")
+    @JsonIgnore
     List<OrderDetail> orderDetails;
 }

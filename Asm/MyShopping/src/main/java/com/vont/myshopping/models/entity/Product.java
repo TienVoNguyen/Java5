@@ -42,6 +42,6 @@ public class Product extends BaseEntity{
     @Column
     private Boolean available;
 
-    @ManyToOne(fetch = FetchType.EAGER, cascade = CascadeType.ALL)
+    @ManyToOne
     private Category category;
 }
